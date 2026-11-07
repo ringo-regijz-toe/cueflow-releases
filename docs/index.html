@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Cueflowは、音楽の再生順をブロックで組み立てるWindows向けアプリです。最新版をダウンロードできます。">
+  <title>Cueflow ダウンロード</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body data-state="nojs">
+  <a class="skip" href="#main">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <span class="brand"><img src="favicon.svg" alt="" width="24" height="24">Cueflow</span>
+      <span class="badge">先行テスト版</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="title">
+      <div class="hero-text">
+        <h1 id="title">Cueflow</h1>
+        <p class="lead">音楽の再生順を、ブロックで組み立てる。</p>
+        <p class="desc">曲の再生・繰り返し・キー入力待ち・分岐をブロックで並べて、思いどおりの再生の流れを作れるWindows向けアプリです。</p>
+      </div>
+
+      <section class="download" aria-labelledby="dl-heading">
+        <h2 id="dl-heading" class="visually-hidden">ダウンロード</h2>
+        <p class="platform">Windows x64 <span aria-hidden="true">·</span> <span id="version" class="version">最新版</span> <time id="released" class="released"></time></p>
+
+        <div class="when-ready">
+          <a id="dl-installer" class="btn btn-primary" href="https://github.com/ringo-regijz-toe/cueflow-releases/releases">
+            <span class="btn-label">Windows版をダウンロード</span>
+            <span id="installer-meta" class="btn-meta">インストーラー（.exe）</span>
+          </a>
+          <a id="dl-portable" class="btn btn-secondary" href="https://github.com/ringo-regijz-toe/cueflow-releases/releases">
+            <span class="btn-label">Portable版</span>
+            <span id="portable-meta" class="btn-meta">ZIP</span>
+          </a>
+        </div>
+
+        <div class="when-loading">
+          <p class="loading-box">最新版を確認しています…</p>
+        </div>
+
+        <div class="when-error">
+          <p class="notice">最新版の情報を確認できませんでした。GitHubのReleasesページで最新の版を開き、<code>Cueflow_&lt;版&gt;_x64-setup.exe</code>（インストーラー版）を選んでください。</p>
+          <a class="btn btn-primary" href="https://github.com/ringo-regijz-toe/cueflow-releases/releases/latest">
+            <span class="btn-label">GitHub Releasesを開く</span>
+            <span class="btn-meta">github.com</span>
+          </a>
+        </div>
+
+        <div class="when-nojs">
+          <p class="notice">このページで最新版を確認できません。GitHubのReleasesページから入手してください。</p>
+          <a class="btn btn-primary" href="https://github.com/ringo-regijz-toe/cueflow-releases/releases/latest">
+            <span class="btn-label">GitHub Releasesを開く</span>
+            <span class="btn-meta">github.com</span>
+          </a>
+        </div>
+
+        <p id="status" class="visually-hidden" role="status" aria-live="polite"></p>
+
+        <p class="links">
+          <a id="notes-link" href="https://github.com/ringo-regijz-toe/cueflow-releases/releases">リリースノート</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://github.com/ringo-regijz-toe/cueflow-releases/releases">すべてのリリース</a>
+        </p>
+      </section>
+    </section>
+
+    <section class="wrap section" aria-labelledby="choose">
+      <h2 id="choose">どちらを選べばよいですか</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>インストーラー版 <span class="tag">おすすめ</span></h3>
+          <p>通常はこちらを選んでください。ダウンロードした <code>.exe</code> を実行するとユーザー単位でインストールされ、スタートメニューから起動できます。管理者権限は不要です。</p>
+        </article>
+        <article class="card">
+          <h3>Portable版</h3>
+          <p>インストールせずに使う場合の選択肢です。ZIPを書き込み可能なフォルダへすべて展開し、中の <code>Cueflow.exe</code> を起動します。ZIPの中から直接起動しないでください。</p>
+          <p class="small">GitHubのReleasesページに自動で表示される「Source code」のZIPは、実行用のアプリではありません。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="req">
+      <h2 id="req">動作環境</h2>
+      <ul class="list">
+        <li>Windows x64向けです。主にWindows 11で検証しています。</li>
+        <li>Microsoft Edge WebView2 Runtimeが必要です。インストーラー版は未導入の場合に自動で取得します（インターネット接続が必要）。Portable版では<a href="https://developer.microsoft.com/microsoft-edge/webview2/">Microsoft公式サイト</a>から入手してください。</li>
+      </ul>
+    </section>
+
+    <section class="wrap section" aria-labelledby="notes">
+      <h2 id="notes">ご利用の前に</h2>
+      <ul class="list">
+        <li>現在は<strong>先行テスト版</strong>で、正式な完成版ではありません。大切なProjectは別にバックアップしてください。</li>
+        <li>Windowsのコード署名がないため、SmartScreenの警告や、Smart App Controlによる実行拒否が起きる場合があります。</li>
+        <li>Windowsの保護機能は無効にしないでください。実行が止められた場合は、そのまま配布を案内した連絡先へご連絡ください。</li>
+      </ul>
+
+      <details id="hashes" class="hashes" hidden>
+        <summary>ファイルの確認（SHA-256）</summary>
+        <dl id="hash-list"></dl>
+        <p class="small">ハッシュが一致しても、Windowsによる実行許可や発行元の保証にはなりません。</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>配布ファイルは <a href="https://github.com/ringo-regijz-toe/cueflow-releases/releases">GitHub Releases</a> から提供しています。</p>
+    </div>
+  </footer>
+</body>
+</html>
